@@ -2,7 +2,7 @@
 
 
 
-Kevin Olguin - Jorge Venegas 001 
+Kevin Olguin - Jorge Venegas 001D 
 
 Proyecto: Duoc Market 
 
