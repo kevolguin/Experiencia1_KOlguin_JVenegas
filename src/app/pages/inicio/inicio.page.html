@@ -1,0 +1,47 @@
+<ion-header class="ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+         
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+         <ion-img src="/assets/usuario.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+  <ion-card>
+    <ion-card-header>
+      <img src="/assets/compras.jpg" class="ion-text-center">
+      <ion-card-subtitle class="ion-text-center">Duoc-Market</ion-card-subtitle>
+      <ion-card-title class="ion-text-center">Gran plataforma de compras</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      Una aplicacion exclusiva para estudiantes que te permitira poder comprar de forma segura y rapida
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button href="https://www.youtube.com/watch?v=bMoNV9oWs2E" target="_blank">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button href="https://www.instagram.com" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+</ion-content>
