@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"
+            text="Back"
+            color="primary"
+            mode="ios">
+        </ion-back-button>
+      </ion-buttons>
+      
+      <ion-buttons slot="end">
+        <ion-avatar>
+           <ion-img src="/assets/usuario.png"></ion-img>
+        </ion-avatar>
+      </ion-buttons>
+      <ion-title>Feriados</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+                  *ngFor ="let feriado of feriados; let i= index">
+            <ion-card  color="dark">
+              <ion-card-header>
+                <ion-card-subtitle>
+                    <span class="text">{{i + 1 }}</span>
+                    <span class="feriado-fecha">{{feriado.fecha}} </span>
+                </ion-card-subtitle>
+                <ion-card-title>{{feriado.nombre}}</ion-card-title>
+              </ion-card-header>    
+
+              <ion-card-content>
+                <p class="feriado-valor">
+                  {{feriado.comentarios}}
+                  {{feriado.tipo}}
+                  {{feriado.leyes}}
+                  {{feriado.irrenunciable}}
+                </p>
+              </ion-card-content>          
+            </ion-card>
+        </ion-col>  
+      </ion-row>
+    </ion-grid>
+</ion-content>

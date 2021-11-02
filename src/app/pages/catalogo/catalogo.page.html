@@ -1,0 +1,57 @@
+<ion-header class="ion-padding" translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"
+          text="Back"
+          color="primary"
+          mode="ios">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+         <ion-img src="/assets/usuario.png"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title>Catalogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <img src="assets/zapatos.jpg"><br>
+      <ion-button shape="round" size="small" (click)="alertaBoton1()" style="position: absolute;bottom: 10%;" >
+        Informacion 
+      </ion-button>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/polera.jpg">
+      <ion-button shape="round" size="small" (click)="alertaBoton2()" style="position: absolute;bottom: 10%;" >
+        Informacion
+      </ion-button>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/cartera.jpg">
+      <ion-button shape="round" size="small" (click)="alertaBoton3()" style="position: absolute;bottom: 10%;" >
+        Informacion
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-card>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="share"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button href="https://www.youtube.com/watch?v=bMoNV9oWs2E" target="_blank">
+      <ion-icon name="logo-youtube"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button href="https://www.instagram.com/" target="_blank">
+      <ion-icon name="logo-instagram"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+<img src="assets/gifcompras.gif" routerLink="/formulario" class="gif">
+</ion-content>

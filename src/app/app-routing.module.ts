@@ -13,11 +13,23 @@ const routes: Routes = [
   },
   {
     path: 'formulario',
-    loadChildren: () => import('./formulario/formulario.module').then( m => m.FormularioPageModule)
+    loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
   },
   {
     path: 'catalogo',
-    loadChildren: () => import('./catalogo/catalogo.module').then( m => m.CatalogoPageModule)
+    loadChildren: () => import('./pages/catalogo/catalogo.module').then( m => m.CatalogoPageModule)
+  },
+  {
+    path: 'noticias',
+    loadChildren: () => import('./pages/feriados/feriados.module').then( m => m.FeriadosPageModule)
+  },
+  {
+    path: 'datos',
+    loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
 ];
 
