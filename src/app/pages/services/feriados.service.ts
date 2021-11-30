@@ -13,7 +13,7 @@ export class FeriadosService {
   getTopHeadLines()
   {
     return this.http.get<RespuestaToHeadLines>
-      ('https://apis.digital.gob.cl/fl/feriados/2021?callback={string}');
+      ('https://apis.digital.gob.cl/fl/feriados/2021');
   }
 }
 

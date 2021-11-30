@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FeriadosService } from 'src/app/pages/services/feriados.service';
-import {Article} from '../interfaces/interfaces';
+import { Article } from '../interfaces/interfaces';
 
 @Component({
   selector: 'app-feriados',

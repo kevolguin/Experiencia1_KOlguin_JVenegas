@@ -1,4 +1,4 @@
-export interface RespuestaToHeadLines {
+  export interface RespuestaToHeadLines {
     feriado: Article[];
   }
   
@@ -8,7 +8,7 @@ export interface RespuestaToHeadLines {
     fecha: string;
     irrenunciable: number;
     tipo: string;
-    leyes?: Ley[];
+    leyes?: Ley;
   }
 
   export interface Ley {

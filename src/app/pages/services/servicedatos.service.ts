@@ -48,42 +48,4 @@ export class ServicedatosService {
     return this.storage.get(ITEMS_KEY);
   }
 
-
-  //actualizar información de un objeto 
-  updateDatos(dato: Datos): Promise<any>{
-    return this.storage.get(ITEMS_KEY).then((datos : Datos[])=>{
-      if (!datos || datos.length == 0){
-        return null;
-      }
-      let newDato: Datos[] = [];
-      for (let i of datos){
-        if (i.id === dato.id){
-          newDato.push(dato);
-        }
-        else{
-          newDato.push(i);
-        }
-      }
-      return this.storage.set(ITEMS_KEY, newDato);
-    });
-  }
-
-   //Eliminar
-  deleteDatos(id: number): Promise<Datos>{
-    return this.storage.get(ITEMS_KEY).then((datos : Datos[])=>{
-      if (!datos || datos.length === 0){
-        return null;
-      }
-      let toKeep: Datos[] = []; 
-      for (let i of datos){
-        if (i.id !== id){
-          toKeep.push(i);
-        }
-      }
-      return this.storage.set(ITEMS_KEY, toKeep);
-    });
-
-  }
-
-
 }

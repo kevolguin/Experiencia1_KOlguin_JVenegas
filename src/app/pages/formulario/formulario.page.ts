@@ -1,43 +1,51 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { FormGroup,FormControl,Validators,FormBuilder } from '@angular/forms';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.page.html',
   styleUrls: ['./formulario.page.scss'],
 })
-
 export class FormularioPage implements OnInit {
 
-  usuario = {
-    nombre: '',
-    password: '',
-    fecha: '',
-    celular: '',
-    email: ''
-  }
+  formularioRegistro: FormGroup;
 
-  constructor(public alertController:AlertController) { }
+  constructor(public fb: FormBuilder,
+    public alertController: AlertController,
+    public navCtrl: NavController) {
+    this.formularioRegistro = this.fb.group({
+      'nombre': new FormControl("", Validators.required),
+      'password': new FormControl("", Validators.required),
+    });
+  }
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    console.log('submit');
-    console.log(this.usuario);
+  async guardar(){
+    var f = this.formularioRegistro.value;
+
+    if(this.formularioRegistro.invalid){
+      const alert = await this.alertController.create({
+        header: 'Datos incompletos',
+        message: 'Debes completar los datos',
+        buttons: ['Aceptar']
+      });
+
+      await alert.present();
+      return;
+    }
+
+    var usuario = {
+      nombre: f.nombre,
+      password: f.password
+    }
+
+    localStorage.setItem('usuario',JSON.stringify(usuario));
+
+    localStorage.setItem('ingresado','true');
+    this.navCtrl.navigateRoot('/login');
   }
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Mensaje',
-      message: 'El usuario ha sido registrado',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-}
 }

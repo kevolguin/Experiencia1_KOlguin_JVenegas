@@ -38,30 +38,12 @@ export class DatosPage implements OnInit {
     this.newDato.id = Date.now();
     this.storageService.addDatos(this.newDato).then(dato=>{
       this.newDato = <Datos>{};
-      this.showToast('!Datos Agregados');
+      this.showToast('Los datos fueron añadidos correctamente');
       this.loadDatos();
     });
   }
 
-  //update
-  updateDatos(dato: Datos ){
-    dato.nom = `UPDATED: ${dato.nom}`;
-    dato.modified = Date.now();
-    this.storageService.updateDatos(dato).then(item=>{
-      this.showToast('Elemento actualizado!')
-      this.myList.closeSlidingItems();
-      this.loadDatos();
-    });
-  } 
-
-  //delete
-  deleteDatos(dato: Datos){
-    this.storageService.deleteDatos(dato.id).then(item=>{
-      this.showToast('Elemento eliminado');
-      this.myList.closeSlidingItems();
-      this.loadDatos();
-    });
-  }
+  
 
   async showToast(msg){
     const toast = await this.toastController.create({
@@ -70,7 +52,5 @@ export class DatosPage implements OnInit {
     });
     toast.present();
   }
-
-
 }
 

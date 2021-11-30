@@ -19,30 +19,26 @@ export class AppComponent {
 
   componentes : Componente[] =[
     {
-      icon: 'information-circle-outline', 
-      name: 'formulario', 
-      redirecTo: '/formulario'
-    },
-    {
       icon: 'wallet-outline', 
-      name: 'catalogo', 
+      name: 'Catalogo', 
       redirecTo: '/catalogo'
     },
     {
       icon: 'wallet-outline', 
-      name: 'API', 
+      name: 'Feriados', 
       redirecTo: '/noticias'
     },
     {
       icon: 'wallet-outline', 
-      name: 'canasta', 
+      name: 'Comentarios', 
       redirecTo: '/datos'
     },
     {
-      icon: 'wallet-outline', 
-      name: 'login', 
+      icon: 'power', 
+      name: 'Cerrar Sesión', 
       redirecTo: '/login'
     },
+
   ]
 
 }
